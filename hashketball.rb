@@ -166,3 +166,7 @@ def player_numbers name
   team = find_team name
   team[:players].map { |player| player[:number] }
 end
+
+def player_stats name
+  all_players.find { |player| player[:player_name] == name }
+end
