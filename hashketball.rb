@@ -150,3 +150,8 @@ def find_team name
   end
   found_team[1]
 end
+
+def team_colors name
+  team = find_team name
+  team[:colors]
+end
