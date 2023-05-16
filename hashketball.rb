@@ -143,3 +143,10 @@ def shoe_size name
   found_player = all_players.find { |player| player[:player_name] == name }
   found_player[:shoe]
 end
+
+def find_team name
+  found_team = game_hash.find do |key, value|
+    value[:team_name] == name
+  end
+  found_team[1]
+end
