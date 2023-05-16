@@ -131,7 +131,7 @@ end
 # Write code here
 
 def all_players
-  game_hash[:away][:players] + game_hash[:home][:players]
+  game_hash[:home][:players] + game_hash[:away][:players]
 end
 
 def num_points_scored name
@@ -179,4 +179,14 @@ end
 def most_points_scored
   most_points = all_players.max_by { |player| player[:points] }
   most_points[:player_name]
+end
+
+def winning_team
+  home_team = game_hash[:home][:players].sum { |player| player[:points] }
+  away_team = game_hash[:away][:players].sum { |player| player[:points] }
+  if home_team > away_team
+    game_hash[:home][:team_name]
+  else
+    game_hash[:away][:team_name]
+  end
 end
