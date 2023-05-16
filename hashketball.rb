@@ -195,3 +195,8 @@ def player_with_longest_name
   player_names = all_players.map { |player| player[:player_name] }
   player_names.max_by { |player| player.size }
 end
+
+def long_name_steals_a_ton?
+  most_steals = all_players.max_by { |player| player[:steals] }
+  most_steals[:player_name] == player_with_longest_name
+end
