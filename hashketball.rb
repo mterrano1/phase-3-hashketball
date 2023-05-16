@@ -170,3 +170,8 @@ end
 def player_stats name
   all_players.find { |player| player[:player_name] == name }
 end
+
+def big_shoe_rebounds
+  big_shoe = all_players.max_by { |player| player[:shoe] }
+  big_shoe[:rebounds]
+end
