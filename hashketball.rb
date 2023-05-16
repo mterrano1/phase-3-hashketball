@@ -155,3 +155,9 @@ def team_colors name
   team = find_team name
   team[:colors]
 end
+
+def team_names
+  game_hash.map do |key, value|
+    value[:team_name]
+  end
+end
