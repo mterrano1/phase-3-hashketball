@@ -190,3 +190,8 @@ def winning_team
     game_hash[:away][:team_name]
   end
 end
+
+def player_with_longest_name
+  player_names = all_players.map { |player| player[:player_name] }
+  player_names.max_by { |player| player.size }
+end
