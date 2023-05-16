@@ -133,3 +133,8 @@ end
 def all_players
   game_hash[:away][:players] + game_hash[:home][:players]
 end
+
+def num_points_scored name
+  found_player = all_players.find { |player| player[:player_name] == name }
+  found_player[:points]
+end
